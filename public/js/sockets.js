@@ -1,9 +1,16 @@
-export default function setupSockets(){
+
+export  function setupSockets(){
 // object to store desktop sockets
     let desktopSocket = null;
 
+    const serverURL = window.location.hostname + ":" +  window.location.port;
+    const socket = io.connect(serverURL, {secure: true});
+    // register phone connection
+    socket.emit('desktop-connect');
+
+
 // the socket can be a phone or a desktop
-    realtimeListener.on('connection', function (socket){
+    realtimeListener.on('connection', function (socket) {
 
         // receives a connect message from a desktop (for this example, we only have one yet)
         socket.on("desktop-connect", function () {
@@ -27,9 +34,7 @@ export default function setupSockets(){
             console.log("Phone moved:" + data.beta  );
             if (desktopSocket)
                 desktopSocket.emit('phone-move', data.beta);
-                console.log("PROBA")
                 if(data.beta <0) {
-                    console.log("Negativo Iñi")
                     window.dispatchEvent(
                         new KeyboardEvent("keydown", {
                             code: "ArrowLeft"

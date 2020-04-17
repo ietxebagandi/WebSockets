@@ -3,7 +3,7 @@ import Keyboard from "./Keyboard.js";
 import {setupKeyboard} from "./input.js";
 import Settings from "./Settings.js";
 import CollisionManager from "./collisions.js";
-import setupSockets from "./sockets.js";
+import {setupSockets} from "./sockets.js";
 
 const canvas = document.getElementById('screen');
 const context = canvas.getContext('2d');
@@ -11,6 +11,8 @@ const context = canvas.getContext('2d');
 
 Settings.SCREEN_HEIGHT=canvas.height;
 Settings.SCREEN_WIDTH=canvas.width;
+
+
 
 window.onload = setupSockets;
 
@@ -56,7 +58,6 @@ Promise.all([loadImage('img/player.png'),loadImage('img/hookRope.png'),loadLevel
         input.listenTo(window);
 
         update(0);
-
 
     });
 
