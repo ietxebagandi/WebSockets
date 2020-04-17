@@ -35,10 +35,10 @@ export default class KeyboardState{
         console.log(this.keyStates);
 
         if(event.type==='keydown'){
-            if(event.key==="ArrowRight"){
-                this.buster.direction=new Vec2D(1 ,0);
-            }else if(event.code==="ArrowLeft"){
-                this.buster.direction=new Vec2D(-1,0);
+            if(event.code==="ArrowLeft"){
+                this.buster.direction=new Vec2D(-1 ,0);
+            }else if(event.code==="ArrowRight"){
+                this.buster.direction=new Vec2D(1,0);
             }else if(event.code==="ArrowUp"){
                 this.buster.direction=new Vec2D(0,1);
             }else if(event.code==="ArrowDown"){

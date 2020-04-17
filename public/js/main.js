@@ -3,7 +3,7 @@ import Keyboard from "./Keyboard.js";
 import {setupKeyboard} from "./input.js";
 import Settings from "./Settings.js";
 import CollisionManager from "./collisions.js";
-import {setupSockets} from "./sockets.js";
+import setupSockets from "./sockets.js";
 
 const canvas = document.getElementById('screen');
 const context = canvas.getContext('2d');
