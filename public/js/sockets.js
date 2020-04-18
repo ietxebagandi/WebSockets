@@ -1,6 +1,3 @@
-
-
-
 export default function setupSockets(){
 // object to store desktop sockets
     let desktopSocket = null;

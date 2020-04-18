@@ -8,15 +8,6 @@ export function  setupKeyboard(buster){
         input.addMapping(botoia, keyState => {
             console.log(keyState);
         });
-
-
     });
     return input;
 }
-
-
-
-
-
-
-
